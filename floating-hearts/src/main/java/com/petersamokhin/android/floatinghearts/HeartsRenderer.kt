@@ -17,7 +17,7 @@ import org.rajawali3d.renderer.Renderer
 import java.util.Random
 
 /**
- * Created: 15/09/2018 at 21:05
+ * Rajawali renderer wrapper.
  *
  * @author PeterSamokhin, https://petersamokhin.com/
  */
@@ -96,9 +96,7 @@ class HeartsRenderer(context: Context) : Renderer(context) {
         }.play()
     }
 
-    fun applyConfig(newConfig: Config) {
-        config = newConfig
-    }
+    fun applyConfig(newConfig: Config) { config = newConfig }
 
     fun getConfig() = config
 
@@ -117,14 +115,19 @@ class HeartsRenderer(context: Context) : Renderer(context) {
         return mat
     }
 
-    override fun initScene() {
-        currentCamera.z = 4.2
-    }
+    override fun initScene() { currentCamera.z = 4.2 }
 
     override fun onOffsetsChanged(xOffset: Float, yOffset: Float, xOffsetStep: Float, yOffsetStep: Float, xPixelOffset: Int, yPixelOffset: Int) = Unit
 
     override fun onTouchEvent(event: MotionEvent) = Unit
 
+    /**
+     * Scene configuration.
+     *
+     * @property xMax The max amplitude of the flight along the X axis. For 420dpi and 1920x1080 value 5 is optimal maximum.
+     * @property floatingTimeCoeff Duration of the flying animation will be multiplied by this value.
+     * @property sizeCoeff Heart size coefficient.
+     */
     data class Config(
         val xMax: Float,
         val floatingTimeCoeff: Float,
@@ -133,11 +136,7 @@ class HeartsRenderer(context: Context) : Renderer(context) {
 
     companion object {
         private const val TAG = "HEARTS_RENDERER"
-        val DEFAULT_CONFIG = Config(
-            5f,
-            2f,
-            1f
-        )
+        val DEFAULT_CONFIG = Config(5f, 2f, 1f)
     }
 }
 
