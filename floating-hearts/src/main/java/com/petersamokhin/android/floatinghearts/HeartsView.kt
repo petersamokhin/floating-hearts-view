@@ -1,37 +1,25 @@
 package com.petersamokhin.android.floatinghearts
 
+import android.content.Context
 import android.graphics.*
-import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.util.SparseArray
-import android.view.*
-import android.widget.FrameLayout
+import android.util.*
 import org.rajawali3d.view.SurfaceView
 import kotlin.concurrent.thread
 
-class HeartsView : Fragment() {
+class HeartsView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null) : SurfaceView(context, attrs) {
 
     private val cache = SparseArray<Bitmap>()
     private val heartWidth = 50.dp
 
-    private lateinit var emitter: HeartsRenderer
+    private val emitter = HeartsRenderer(context)
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        super.onCreateView(inflater, container, savedInstanceState)
-        return (inflater.inflate(R.layout.hearts, container, false) as FrameLayout).also {
-            val renderer = HeartsRenderer(context!!)
-
-            it.addView(SurfaceView(context).apply {
-                setFrameRate(60.0)
-                setZOrderOnTop(true)
-                setEGLConfigChooser(8, 8, 8, 8, 16, 0)
-                holder.setFormat(PixelFormat.TRANSLUCENT)
-                setTransparent(true)
-                setSurfaceRenderer(renderer)
-            })
-
-            emitter = renderer
-        }
+    init {
+        setFrameRate(60.0)
+        setZOrderOnTop(true)
+        setEGLConfigChooser(8, 8, 8, 8, 16, 0)
+        holder.setFormat(PixelFormat.TRANSLUCENT)
+        setTransparent(true)
+        setSurfaceRenderer(emitter)
     }
 
     @Synchronized
@@ -48,7 +36,7 @@ class HeartsView : Fragment() {
 
                 cache.put(heartModel.id, resultBitmap)
 
-                view?.post {
+                post {
                     emitter.emitHeart(resultBitmap, heartWidth, height, heartModel.id, maxY)
                 }
             }
