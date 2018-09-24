@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="HeartsView">
+        <attr name="x_max" format="float" />
+        <attr name="size_coeff" format="float" />
+        <attr name="floating_time_coeff" format="float" />
+    </declare-styleable>
+</resources>

@@ -15,6 +15,18 @@ class HeartsView @JvmOverloads constructor(context: Context, attrs: AttributeSet
     private val renderer = HeartsRenderer(context)
 
     init {
+        attrs?.also {
+            context.obtainStyledAttributes(it, R.styleable.HeartsView).apply {
+                val xMax = getFloat(R.styleable.HeartsView_x_max, HeartsRenderer.DEFAULT_CONFIG.xMax)
+                val sizeCoeff = getFloat(R.styleable.HeartsView_size_coeff, HeartsRenderer.DEFAULT_CONFIG.sizeCoeff)
+                val timeCoeff = getFloat(R.styleable.HeartsView_floating_time_coeff, HeartsRenderer.DEFAULT_CONFIG.floatingTimeCoeff)
+
+                applyConfig(getConfig().copy(xMax = xMax, sizeCoeff = sizeCoeff, floatingTimeCoeff = timeCoeff))
+
+                recycle()
+            }
+        }
+
         setFrameRate(60.0)
         setZOrderOnTop(true)
         setEGLConfigChooser(8, 8, 8, 8, 16, 0)
