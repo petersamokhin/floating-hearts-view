@@ -56,5 +56,4 @@ heartsView.emitHeart(model)
 ```
 
 # 3rd party
-Only one dependency — [Rajawali](https://github.com/Rajawali/Rajawali).
-Inspired by Instagram and VK Live broadcasts.
+[Rajawali](https://github.com/Rajawali/Rajawali) is the only one dependency. Inspired by Instagram and VK Live broadcasts.
