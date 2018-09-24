@@ -1,4 +1,7 @@
-# Floating Hearts [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Floating%20Hearts%20view-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/7155)
+# Floating Hearts
+
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Floating%20Hearts%20view-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/7155) [![](https://jitpack.io/v/petersamokhin/floating-hearts-view.svg)](https://jitpack.io/#petersamokhin/floating-hearts-view) [![GitHub license](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/petersamokhin/floating-hearts-view/blob/master/LICENSE)
+
 
 Instagram-like floating hearts view for android.
 
