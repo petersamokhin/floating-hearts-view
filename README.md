@@ -1,4 +1,5 @@
-# Floating Hearts
+# Floating Hearts [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Floating%20Hearts%20view-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/7155)
+
 Instagram-like floating hearts view for android.
 
 <img src="https://petersamokhin.com/files/projects/fh/demo.gif" width="400" height="651" />
