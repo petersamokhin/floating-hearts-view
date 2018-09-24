@@ -38,6 +38,18 @@ val config = HeartsRenderer.Config(
 heartsView.applyConfig(config)
 ```
 
+Or in your XML layout file:
+
+```xml
+<com.petersamokhin.android.floatinghearts.HeartsView
+            android:id="@+id/heartsView"
+            android:layout_width="match_parent"
+            android:layout_height="330dp"
+            app:x_max="3"
+            app:size_coeff="2.5"
+            app:floating_time_coeff="0.8" />
+```
+
 Make your model:
 
 ```kotlin
