@@ -53,11 +53,16 @@ Or in your XML layout file:
 Make your model:
 
 ```kotlin
+
+// Get bitmap from image by URL
+// or simply convert from drawable, etc
 val image = "https://cdn.shopify.com/s/files/1/1061/1924/products/Thinking_Face_Emoji_large.png"
-val bitmap = URL(image).readBytes().toBitmap()
+val byteArray = URL(image).readBytes()
+val bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.size)
+
 val model = HeartsView.Model(
             0,                         // Unique ID of this image, used for Rajawali materials caching
-            bitmap                     // Bitmap image — easy to use any drawable or image by URL and convert to bitmap
+            bitmap                     // Bitmap image
 )
 ```
 
