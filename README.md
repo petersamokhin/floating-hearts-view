@@ -33,8 +33,8 @@ Configure renderer:
 val config = HeartsRenderer.Config(
             5f,                        // The max amplitude of the flight along the X axis
             0.15f,                     // Duration of the flying animation will be multiplied by this value (lower — faster)
-            2f,                        // Heart size coefficient 
-        )
+            2f                         // Heart size coefficient 
+)
 heartsView.applyConfig(config)
 ```
 
@@ -46,7 +46,7 @@ val bitmap = URL(image).readBytes().toBitmap()
 val model = HeartsView.Model(
             0,                         // Unique ID of this image, used for Rajawali materials caching
             bitmap                     // Bitmap image — easy to use any drawable or image by URL and convert to bitmap
-       )
+)
 ```
 
 Let your image fly!
