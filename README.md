@@ -1,5 +1,5 @@
-# floating-hearts-view
-Instagram-like floating hearts view.
+# Floating Hearts
+Instagram-like floating hearts view for android.
 
 <img src="https://petersamokhin.com/files/projects/fh/demo.gif" width="400" height="651" />
 
