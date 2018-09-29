@@ -42,6 +42,7 @@ class HeartsView @JvmOverloads constructor(context: Context, attrs: AttributeSet
      * @param maxY Magic param.
      */
     @Synchronized
+    @JvmOverloads
     fun emitHeart(model: Model, maxY: Float = MAX_Y_FULL) {
         val height = (model.bitmap.height.toFloat() / (model.bitmap.width.toFloat() / HEART_WIDTH.toFloat())).toInt()
         val resultBitmap = Bitmap.createScaledBitmap(model.bitmap, HEART_WIDTH, height, true)
