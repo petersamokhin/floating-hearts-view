@@ -1,4 +1,8 @@
 # Floating Hearts
+
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Floating%20Hearts%20view-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/7155) [![](https://jitpack.io/v/petersamokhin/floating-hearts-view.svg)](https://jitpack.io/#petersamokhin/floating-hearts-view) [![GitHub license](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://github.com/petersamokhin/floating-hearts-view/blob/master/LICENSE)
+
+
 Instagram-like floating hearts view for android.
 
 <img src="https://petersamokhin.com/files/projects/fh/demo.gif" width="400" height="651" />
@@ -38,14 +42,31 @@ val config = HeartsRenderer.Config(
 heartsView.applyConfig(config)
 ```
 
+Or in your XML layout file:
+
+```xml
+<com.petersamokhin.android.floatinghearts.HeartsView
+            android:id="@+id/heartsView"
+            android:layout_width="match_parent"
+            android:layout_height="330dp"
+            app:x_max="3"
+            app:size_coeff="2.5"
+            app:floating_time_coeff="0.8" />
+```
+
 Make your model:
 
 ```kotlin
+
+// Get bitmap from image by URL
+// or simply convert from drawable, etc
 val image = "https://cdn.shopify.com/s/files/1/1061/1924/products/Thinking_Face_Emoji_large.png"
-val bitmap = URL(image).readBytes().toBitmap()
+val byteArray = URL(image).readBytes()
+val bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.size)
+
 val model = HeartsView.Model(
             0,                         // Unique ID of this image, used for Rajawali materials caching
-            bitmap                     // Bitmap image — easy to use any drawable or image by URL and convert to bitmap
+            bitmap                     // Bitmap image
 )
 ```
 
