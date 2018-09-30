@@ -9,7 +9,7 @@ Instagram-like floating hearts view for android.
 
 Demo APK: https://petersamokhin.com/files/projects/fh/fh.apk
 
-# Install
+## Install
 
 1. Add `jitpack` repo to your project-level `build.gradle`:
 ```groovy
@@ -29,7 +29,7 @@ dependencies {
 ```
 Latest version: https://github.com/petersamokhin/floating-hearts-view/releases
 
-# Usage
+## Usage
 
 Configure renderer:
 
@@ -76,10 +76,10 @@ Let your image fly!
 heartsView.emitHeart(model)
 ```
 
-# 3rd party
+## 3rd party
 [Rajawali](https://github.com/Rajawali/Rajawali) is the only one dependency. Inspired by Instagram/Snapchat/etc broadcasts.
 
-# Known issues
+## Known issues
 On some devices / on some Android versions `NullPointerException` may happen after `new Material()` call in `HeartsRenderer`. This causes because `GLES20.glGetString( GLES20.GL_EXTENSIONS );` is returning null.
 
 To fix this simply do not call `emitHeart` in first 300-500 ms after activity start.
