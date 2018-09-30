@@ -77,4 +77,9 @@ heartsView.emitHeart(model)
 ```
 
 # 3rd party
-[Rajawali](https://github.com/Rajawali/Rajawali) is the only one dependency. Inspired by Instagram and VK Live broadcasts.
+[Rajawali](https://github.com/Rajawali/Rajawali) is the only one dependency. Inspired by Instagram/Snapchat/etc broadcasts.
+
+# Known issues
+On some devices / on some Android versions `NullPointerException` may happen after `new Material()` call in `HeartsRenderer`. This causes because `GLES20.glGetString( GLES20.GL_EXTENSIONS );` is returning null.
+
+To fix this simply do not call `emitHeart` in first 300-500 ms after activity start.
